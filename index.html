@@ -16,19 +16,7 @@
   padding: 10px;
   height: 300px; /* Should be removed. Only for demonstration */
 }
-.column2 {
-  float: left;
-  width: 1000px;
-  padding: 10px;
-  height: 1000px; /* Should be removed. Only for demonstration */
-}
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
@@ -40,16 +28,9 @@
 </head>
 <body>
 
-<div class="row">
-  <div class="column" style="background-color:#bbb;">
-    <h2>Column 1</h2>
-    <p>RIGHT CLICK to insert a vertex </p>
-    <p>LEFT CLICK to select a vertex </p>
-    <p>C to constraint the selected vertices </p>
-  </div>
-  <div class="column2" style="background-color:#fca;">
+  <div class="column" style="background-color:rgb(142, 0, 111);">
     <h2>Projects</h2>
-    <a href="Renderer/Example.html">Page 2</a>
+    <a href="Renderer/Example.html">Text Rendering</a>
     <h2></h2>
     <a href="Triangulation/CDTDemo.html">Constrained Delaunay Triangulation</a>
   </div>
