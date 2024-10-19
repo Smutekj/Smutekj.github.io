@@ -1,43 +1,55 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css"> 
-<style>
-* {
-  box-sizing: border-box;
-}
 
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 31%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-}
-</style>
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 31%;
+      padding: 10px;
+      height: 300px;
+      /* Should be removed. Only for demonstration */
+    }
+
+    .content {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <div class="column" style="background-color:rgb(200, 0, 200);">
-    <h2>Projects</h2>
-    <a href="Renderer/Example.html">Text Rendering</a>
-    <h2></h2>
-    <a href="Triangulation/CDTDemo.html">Constrained Delaunay Triangulation</a>
+  <div class="content">
+
+    <div class="column" style="background-color:rgb(200, 200, 200);">
+      <h2>Projects</h2>
+      <a href="Renderer/Example.html">Text Rendering</a>
+      <h2></h2>
+      <a href="Triangulation/CDTDemo.html">Constrained Delaunay Triangulation</a>
+    </div>
+    <div class="column" style="background-color:rgb(200,200, 200);">
+      <h2>Projects</h2>
+      <a href="PathFinding/projectx.html">PathFinding</a>
+      <h2></h2>
+      <a href="AliensAndMeteors/projectx.html">Aliens And Meteors</a>
+    </div>
+
   </div>
-  <div class="column" style="background-color:rgb(200,200, 200);">
-    <h2>Projects</h2>
-    <a href="PathFinding/projectx.html">PathFinding</a>
-    <h2></h2>
-    <a href="AliensAndMeteors/projectx.html">Aliens And Meteors</a>
-  </div>
-</div>
+</body>
