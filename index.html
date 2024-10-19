@@ -40,14 +40,33 @@
 
     <div class="column" style="background-color:rgb(200, 200, 200);">
       <h2>Projects</h2>
-      <a href="Renderer/Example.html">Text Rendering</a>
-      <h2></h2>
-      <a href="Triangulation/CDTDemo.html">Constrained Delaunay Triangulation</a>
-    </div>
-    <div class="column" style="background-color:rgb(200,200, 200);">
-      <h2>Projects</h2>
+      <h3>
+        <a href="Renderer/Example.html">Text Rendering</a>
+      </h3>
+      <p>
+        Simple 2D batch renderer using OpenGL ES 2.0 and built to wasm by Emscripten.
+      </p>
+      <a href="www.github.com/Smutekj/simple-emscripten-renderer">Code:
+        github.com/Smutekj/simple-emscripten-renderer</a>
+      <h3><a href="Triangulation/CDTDemo.html">Constrained Delaunay Triangulation</a></h3>
+
+      <p>
+        A constrained version of the Delaunay triangulation based on the article of
+        <a href="https://doi.org/10.1016/0045-7949(93)90239-A">Sloan.</a> 
+        Includes option to choose type of position vector including small types, like unsigned char. 
+        This can be useful for optimisation in RTS games for instance, where maps tend to lie on not too large grids.
+        (For example, Starcraft 2 uses 2 bytes per Vertex coordinate).
+         Can be used for:
+         <ul>
+          <li>PathFinding</li>
+          <li>Vision polygon construction</li>
+          <li>Terrain construction (I Guess you could use it for that :))</li>
+          <li>Discretisation of the physical domain in FEM/FVM simulations</li>
+          <li>Voronoi diagrams construction?</li>
+         </ul>
+      </p>
       <a href="PathFinding/projectx.html">PathFinding</a>
-      <h2></h2>
+      <h3></h3>
       <a href="AliensAndMeteors/projectx.html">Aliens And Meteors</a>
     </div>
 
