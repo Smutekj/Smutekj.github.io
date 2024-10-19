@@ -10,19 +10,17 @@
       box-sizing: border-box;
     }
 
-
     /* Create two equal columns that floats next to each other */
     .column {
       float: left;
       width: 100%;
       padding: 10px;
-      height: 1800px;
+      height: 100%;
       /* Should be removed. Only for demonstration */
     }
 
     .content {
-      max-width: 1800px;
-      width: 1800px;
+      max-width: 1500px;
       margin: auto;
     }
 
@@ -54,18 +52,18 @@
       </h3>
       <p>
         A constrained version of the Delaunay triangulation based on the article of
-        <a href="https://doi.org/10.1016/0045-7949(93)90239-A">Sloan.</a> 
-        Includes option to choose type of position vector including small types, like unsigned char. 
+        <a href="https://doi.org/10.1016/0045-7949(93)90239-A">Sloan.</a>
+        Includes option to choose type of position vector including small types, like unsigned char.
         This can be useful for optimisation in RTS games for instance, where maps tend to lie on not too large grids.
         (For example, Starcraft 2 uses 2 bytes per Vertex coordinate).
-         Can be used for:
-         <ul>
-          <li>PathFinding</li>
-          <li>Vision polygon construction</li>
-          <li>Terrain construction (I Guess you could use it for that :))</li>
-          <li>Discretisation of the physical domain in FEM/FVM simulations</li>
-          <li>Voronoi diagrams construction?</li>
-         </ul>
+        Can be used for:
+      <ul>
+        <li>PathFinding</li>
+        <li>Vision polygon construction</li>
+        <li>Terrain construction (I Guess you could use it for that :))</li>
+        <li>Discretisation of the physical domain in FEM/FVM simulations</li>
+        <li>Voronoi diagrams construction?</li>
+      </ul>
       </p>
       <h3>
         <a href="PathFinding/projectx.html">PathFinding</a>
@@ -73,18 +71,26 @@
       <p>
         A simple shooter (really?) game with lua scripting. Not sure what I want to make out of it, yet.
         Graphics, collision system is done using an in-house renderer(which is kind of shitty, kek).
-        Broad phase of the collision detection algorithm is accelerated using the Bounding Volume Hiearchy 
-        spatial data structure. 
-        (Honsetly, I just took this 
+        Broad phase of the collision detection algorithm is accelerated using the Bounding Volume Hiearchy
+        spatial data structure.
+        (Honsetly, I just took this
         <a href="https://box2d.org/files/ErinCatto_DynamicBVH_Full.pdf">presentation </a>
         and kind of stiched it together based on the info in it. God bless Erin Catto)
         Lua bindings were achieved using the LuaBridge library. (not gonna lie, I have no clue how lua works :D)
+        The idea here is that some of my students who will want to learn lua will write
+        the rest of the game as some rogue-like or RPG or whatever. For me this servers as place to create cool effects
+        like lightning bolts.
+
       </p>
       <h3>
         <a href="AliensAndMeteors/projectx.html">Aliens And Meteors</a>
       </h3>
       <p>
-
+        A simple space shooter with Boids simulation.
+        Not really finished because I'm too lazy to look for assets or make my own
+        and I'll be dead in the grave before I buy some.
+        So most effects are just shaders because they are at least fun to write.
+        I'll probably let one of my students finish it because I wanna have fun implementing some 3D physics.
       </p>
     </div>
 
