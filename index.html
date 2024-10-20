@@ -24,11 +24,15 @@
       /* Should be removed. Only for demonstration */
     }
 
-    .demo{
+    .demo {
       padding: 10px;
       border-radius: 10px;
-      margin-left: fit-content + 10px;
-      background: #cafd00;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+      color: yellow;
+      background: #000000;
+      text-align: center;
     }
 
     .projectsField {
@@ -64,10 +68,10 @@
       width: fit-content;
       margin-left: auto;
       margin-right: auto;
-      color:rgb(0, 255, 225)
+      color: rgb(0, 255, 225)
     }
 
-    
+
 
     /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
     @media screen and (max-width: 1800px) {
@@ -101,11 +105,11 @@
         <h3 style="text-align: center">
           Constrained Delaunay Triangulation
         </h3>
-        <div class = "demo">
-        <h4>
-        <a href="Triangulation/CDTDemo.html"> Demo </a>
-        </h4>
-        </div>
+        <button class="demo"></button>
+        <h3>
+          <a href="Triangulation/CDTDemo.html"> Demo </a>
+        </h3>
+        </button>
         <p>
           A constrained version of the Delaunay triangulation based on the article of
           <a href="https://doi.org/10.1016/0045-7949(93)90239-A">Sloan.</a>
