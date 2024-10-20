@@ -9,10 +9,11 @@
     * {
       box-sizing: border-box;
       margin-top: 0px;
-        margin-right: 0px;
-        margin-bottom: 0px;
-        margin-left: 0px
+      margin-right: 0px;
+      margin-bottom: 0px;
+      margin-left: 0px
     }
+
     /* Create two equal columns that floats next to each other */
     .background {
       float: left;
@@ -35,13 +36,17 @@
     }
 
     .projectField {
-      font: "Courier New"; 
+      font: "Courier New";
       background: #d7d7d7;
       padding: 20px;
       width: 90%;
       height: 100%;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    .headerProjects {
+      height: 115%;
     }
 
     .content {
@@ -62,7 +67,9 @@
   <div class="content">
     <div class="background">
       <div class="projectsField">
-        <h1 style="text-align: center">Projects</h1>
+        <div class="headerProjects">
+          <h1 style="text-align: center">Projects</h1>
+        </div>
         <div class="projectField">
           <h3 style="text-align: center">
             <a href="Renderer/Example.html">Text Rendering</a>
