@@ -19,7 +19,7 @@
       float: left;
       width: 100%;
       padding: 0px;
-      height: 100%;
+      height: 110%;
       background: #030303;
       /* Should be removed. Only for demonstration */
     }
@@ -43,12 +43,19 @@
       height: 100%;
       margin-left: auto;
       margin-right: auto;
+      border-radius: 10px;
     }
 
     .headerProjects {
       height: 115%;
+      background-color: hsl(178, 100%, 76%);
+      border-radius: 10px;
     }
 
+    .headerProject {
+      background-color: hsl(136, 97%, 73%);
+      border-radius: 10px;
+    }
 
 
     /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
@@ -66,10 +73,12 @@
       <div class="headerProjects">
         <h1 style="text-align: center">Projects</h1>
       </div>
-      <div class="projectField">
+      <div class="headerProject">
         <h3 style="text-align: center">
           <a href="Renderer/Example.html">Text Rendering</a>
         </h3>
+      </div>
+      <div class="projectField">
         <p>
           Simple 2D batch renderer using OpenGL ES 2.0 and built to wasm by Emscripten.
         </p>
@@ -98,10 +107,12 @@
         </p>
         Code: <a href="https://github.com/Smutekj/CDT">https://github.com/Smutekj/CDT</a>
       </div>
-      <div class="projectField">
+      <div class="headerProject">
         <h3 style="text-align: center">
           <a href="PathFinding/projectx.html">PathFinding</a>
         </h3>
+      </div>
+      <div class="projectField">
         <p>
           A shooter (sort of) game with lua scripting. Not sure what I want to make out of it, yet.
           Graphics, collision system is done using an in-house renderer(which is kind of shitty, kek).
@@ -118,10 +129,12 @@
         </p>
         Code: <a href=https://github.com/Smutekj/ZombieShooter>https://github.com/Smutekj/ZombieShooter</a>
       </div>
-      <div class="projectField">
+      <div class="headerProject">
         <h3 style="text-align: center">
           <a href="AliensAndMeteors/projectx.html">Aliens And Meteors</a>
         </h3>
+      </div>
+      <div class="projectField">
         <p>
           A space shooter with Boids simulation.
           Not really finished because I'm too lazy to look for assets or make my own
