@@ -56,10 +56,12 @@
       background-color: hsl(0, 81%, 6%);
       border-radius: 10px;
       width: fit-content;
-      text-align: center
+      margin-left: auto;
+      margin-right: auto;
       color:rgb(0, 255, 225)
     }
 
+    
 
     /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
     @media screen and (max-width: 1800px) {
@@ -76,12 +78,13 @@
       <div class="headerProjects">
         <h1 style="text-align: center; color: rgb(0, 255, 98)">Projects</h1>
       </div>
-      <div class="headerProject">
-        <h3 style="text-align: center">
-          <a href="Renderer/Example.html">Text Rendering</a>
-        </h3>
-      </div>
+
       <div class="projectField">
+        <div class="headerProject">
+          <h3 style="text-align: center">
+            <a href="Renderer/Example.html">Text Rendering</a>
+          </h3>
+        </div>
         <p>
           Simple 2D batch renderer using OpenGL ES 2.0 and built to wasm by Emscripten.
         </p>
