@@ -71,18 +71,18 @@
       color: rgb(0, 255, 225)
     }
 
-    .button { 
-      display: inline-block;
-       font-size: 20px;
-       cursor: pointer; 
+    .button {
+      font-size: 20px;
+      cursor: pointer;
       border-radius: 3px;
       margin-left: auto;
       margin-right: auto;
       width: 50%;
       color: yellow;
-      background-color: #000000;
+      background-color: #f9f2f2;
       text-align: center;
       text-decoration: none;
+      display: block;
     }
 
 
@@ -105,11 +105,14 @@
       </div>
 
       <div class="projectField">
-        <div class="headerProject">
-          <h3 style="text-align: center">
-            <a href="Renderer/Example.html">Text Rendering</a>
+        <h3 style="text-align: center">
+          <a href="Renderer/Example.html">Text Rendering</a>
+        </h3>
+        <a href="Renderer/Example.html" class="button">
+          <h3>
+            Demo
           </h3>
-        </div>
+        </a>
         <p>
           Simple 2D batch renderer using OpenGL ES 2.0 and built to wasm by Emscripten.
         </p>
@@ -120,7 +123,6 @@
         <h3 style="text-align: center">
           Constrained Delaunay Triangulation
         </h3>
-
         <a href="Triangulation/CDTDemo.html" class="button">
           <h3>
             Demo
@@ -146,11 +148,14 @@
       </div>
 
       <div class="projectField">
-        <div class="headerProject">
-          <h3 style="text-align: center">
-            <a href="PathFinding/projectx.html">PathFinding</a>
+        <h3 style="text-align: center">
+          PathFinding
+        </h3>
+        <a href="PathFinding/projectx.html" class="button">
+          <h3>
+            Demo
           </h3>
-        </div>
+        </a>
         <p>
           A shooter (sort of) game with lua scripting. Not sure what I want to make out of it, yet.
           Graphics, collision system is done using an in-house renderer(which is kind of shitty, kek).
@@ -169,11 +174,14 @@
       </div>
 
       <div class="projectField">
-        <div class="headerProject">
-          <h3 style="text-align: center">
-            <a href="AliensAndMeteors/projectx.html">Aliens And Meteors</a>
+        <h3 style="text-align: center">
+          Aliens And Meteors
+        </h3>
+        <a href="AliensAndMeteors/projectx.html" class="button">
+          <h3>
+            Demo
           </h3>
-        </div>
+        </a>
         <p>
           A space shooter with Boids simulation.
           Not really finished because I'm too lazy to look for assets or make my own
