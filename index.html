@@ -9,13 +9,24 @@
     * {
       box-sizing: border-box;
     }
+
     /* Create two equal columns that floats next to each other */
-    .column {
+    .background {
       float: left;
       width: 100%;
       padding: 10px;
       height: 100%;
+      background: #030303;
+      border-radius: 25px;
       /* Should be removed. Only for demonstration */
+    }
+
+    .projectField {
+      border-radius: 20px;
+      background: #ADADAD;
+      padding: 20px;
+      width: 90%;
+      height: 100%;
     }
 
     .content {
@@ -25,7 +36,7 @@
 
     /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
     @media screen and (max-width: 1800px) {
-      .column {
+      .background {
         width: 100%;
       }
     }
@@ -34,59 +45,68 @@
 
 <body>
   <div class="content">
-    <div class="column" style="background-color:rgb(200, 200, 200);">
+    <div class="background">
       <h2>Projects</h2>
-      <h3>
-        <a href="Renderer/Example.html">Text Rendering</a>
-      </h3>
-      <p>
-        Simple 2D batch renderer using OpenGL ES 2.0 and built to wasm by Emscripten.
-      </p>
-      <a href="https://www.github.com/Smutekj/simple-emscripten-renderer">Code:
-        github.com/Smutekj/simple-emscripten-renderer</a>
-      <h3>
-        <a href="Triangulation/CDTDemo.html">Constrained Delaunay Triangulation</a>
-      </h3>
-      <p>
-        A constrained version of the Delaunay triangulation based on the article of
-        <a href="https://doi.org/10.1016/0045-7949(93)90239-A">Sloan.</a>
-        Includes option to choose type of position vector including small types, like unsigned char.
-        This can be useful for optimisation in RTS games for instance, where maps tend to lie on not too large grids.
-        (For example, Starcraft 2 uses 2 bytes per Vertex coordinate).
-        Can be used for:
-      <ul>
-        <li>PathFinding</li>
-        <li>Vision polygon construction</li>
-        <li>Terrain construction (I Guess you could use it for that :))</li>
-        <li>Discretisation of the physical domain in FEM/FVM simulations</li>
-        <li>Voronoi diagrams construction?</li>
-      </ul>
-      </p>
-      <h3>
-        <a href="PathFinding/projectx.html">PathFinding</a>
-      </h3>
-      <p>
-        A simple shooter (really?) game with lua scripting. Not sure what I want to make out of it, yet.
-        Graphics, collision system is done using an in-house renderer(which is kind of shitty, kek).
-        Broad phase of the collision detection algorithm is accelerated using the Bounding Volume Hiearchy
-        spatial data structure.
-        (Honsetly, I just took this
-        <a href="https://box2d.org/files/ErinCatto_DynamicBVH_Full.pdf">presentation </a>
-        and kind of stiched it together based on the info in it. God bless Erin Catto)
-        Lua bindings were achieved using the LuaBridge library. (not gonna lie, I have no clue how lua works :D)
-        The idea here is that some of my students who will want to learn lua will write
-        the rest of the game as some rogue-like or RPG or whatever. For me this servers as place to create cool effects
-        like lightning bolts.
-      </p>
-      <h3>
-        <a href="AliensAndMeteors/projectx.html">Aliens And Meteors</a>
-      </h3>
-      <p>
-        A simple space shooter with Boids simulation.
-        Not really finished because I'm too lazy to look for assets or make my own
-        and I'll be dead in the grave before I buy some.
-        So most effects are just shaders because they are at least fun to write.
-        I'll probably let one of my students finish it because I wanna have fun implementing some 3D physics or whatever.
-      </p>
-  </div>
+      <div class="projectField">
+        <h3>
+          <a href="Renderer/Example.html">Text Rendering</a>
+        </h3>
+        <p>
+          Simple 2D batch renderer using OpenGL ES 2.0 and built to wasm by Emscripten.
+        </p>
+        <a href="https://www.github.com/Smutekj/simple-emscripten-renderer">Code:
+          github.com/Smutekj/simple-emscripten-renderer</a>
+      </div>
+      <div class="projectField">
+        <h3>
+          <a href="Triangulation/CDTDemo.html">Constrained Delaunay Triangulation</a>
+        </h3>
+        <p>
+          A constrained version of the Delaunay triangulation based on the article of
+          <a href="https://doi.org/10.1016/0045-7949(93)90239-A">Sloan.</a>
+          Includes option to choose type of position vector including small types, like unsigned char.
+          This can be useful for optimisation in RTS games for instance, where maps tend to lie on not too large grids.
+          (For example, Starcraft 2 uses 2 bytes per Vertex coordinate).
+          Can be used for:
+        <ul>
+          <li>PathFinding</li>
+          <li>Vision polygon construction</li>
+          <li>Terrain construction (I Guess you could use it for that :))</li>
+          <li>Discretisation of the physical domain in FEM/FVM simulations</li>
+          <li>Voronoi diagrams construction?</li>
+        </ul>
+        </p>
+        Code: <a href="https://github.com/Smutekj/CDT">https://github.com/Smutekj/CDT</a>
+      </div>
+      <div class="projectField">
+        <h3>
+          <a href="PathFinding/projectx.html">PathFinding</a>
+        </h3>
+        <p>
+          A shooter (sort of) game with lua scripting. Not sure what I want to make out of it, yet.
+          Graphics, collision system is done using an in-house renderer(which is kind of shitty, kek).
+          Broad phase of the collision detection algorithm is accelerated using the Bounding Volume Hiearchy
+          spatial data structure.
+          (Honsetly, I just took this
+          <a href="https://box2d.org/files/ErinCatto_DynamicBVH_Full.pdf">presentation </a>
+          and kind of stiched it together based on the info in it. God bless Erin Catto)
+          Lua bindings were achieved using the LuaBridge library. (not gonna lie, I have no clue how lua works :D)
+          The idea here is that some of my students who will want to learn lua will write
+          the rest of the game as some rogue-like or RPG or whatever. For me this servers as place to create cool
+          effects
+          like lightning bolts.
+        </p>
+        <h3>
+          <a href="AliensAndMeteors/projectx.html">Aliens And Meteors</a>
+        </h3>
+        <p>
+          A space shooter with Boids simulation.
+          Not really finished because I'm too lazy to look for assets or make my own
+          and I'll be dead in the grave before I buy some.
+          So most effects are just shaders because they are at least fun to write.
+          I'll probably let one of my students finish it because I wanna have fun implementing some 3D physics or
+          whatever.
+        </p>
+      </div>
+    </div>
 </body>
