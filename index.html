@@ -93,10 +93,16 @@
       display: block;
     }
 
-
     .video {
-      width: 50%;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
       background-color: azure;
+    }
+
+    .figCaptions{
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
@@ -177,8 +183,10 @@
           <a href="https://box2d.org/files/ErinCatto_DynamicBVH_Full.pdf">presentation </a>
           and kind of stiched it together based on the info in it. God bless Erin Catto)
           <figure class="video">
-            <img src="PathFindingOptimized/PathFinding-Groups.gif" alt="Test" class="video">
-            <figcaption>Pathfinding and interactions of multiple agents</figcaption>
+            <img src="PathFindingOptimized/PathFinding-Groups.gif" alt="Test">
+            <figcaption style="text-align: center;">
+              Pathfinding and interactions of multiple agents
+            </figcaption>
           </figure> 
           <!-- Lua bindings were achieved using the LuaBridge library. (not gonna lie, I have no clue how lua works :D)
           The idea here is that some of my students who will want to learn lua will write
