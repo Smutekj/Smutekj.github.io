@@ -42,9 +42,9 @@
       height: 100%;
       margin-left: auto;
       margin-right: auto;
-      grid-template-columns:  repeat(auto-fit, minmax(800px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
       display: grid;
-      row-gap: 1%; 
+      row-gap: 1%;
       padding-bottom: 5%;
     }
 
@@ -83,6 +83,8 @@
       color: rgb(0, 255, 247)
     }
 
+
+
     .button {
       font-size: 20px;
       cursor: pointer;
@@ -98,7 +100,7 @@
       transition-duration: 0.3s;
     }
 
-    .button:hover{
+    .button:hover {
       color: rgb(217, 255, 0);
     }
 
@@ -108,6 +110,7 @@
       margin-left: auto;
       margin-right: auto;
     }
+
     .figure {
       width: 80%;
       display: block;
@@ -119,9 +122,13 @@
 
 
 
-    .figCaptions{
+    .figCaptions {
       margin-left: auto;
       margin-right: auto;
+    }
+
+    .tab {
+      tab-size: 8;
     }
 
     /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
@@ -191,9 +198,9 @@
         <figure class="figure">
           <img src="Triangulation/Image.png" alt="Aliens" class="video">
           <figcaption style="text-align: center;">
-            Red lines are constrained edges of the triangulation whereas the green ones are unconstrained. 
+            Red lines are constrained edges of the triangulation whereas the green ones are unconstrained.
           </figcaption>
-        </figure> 
+        </figure>
       </div>
 
       <div class="projectField">
@@ -218,13 +225,13 @@
           (Honsetly, I just took this
           <a href="https://box2d.org/files/ErinCatto_DynamicBVH_Full.pdf">presentation </a>
           and kind of stiched it together based on the info in it. God bless Erin Catto)
-          <figure class="figure">
-            <img src="PathFindingOptimized/PathFinding-Groups.gif" alt="Test" class="video">
-            <figcaption style="text-align: center;">
-              Pathfinding and interactions of multiple agents. Interactions are virtually adapted Boids.
-            </figcaption>
-          </figure> 
-          <!-- Lua bindings were achieved using the LuaBridge library. (not gonna lie, I have no clue how lua works :D)
+        <figure class="figure">
+          <img src="PathFindingOptimized/PathFinding-Groups.gif" alt="Test" class="video">
+          <figcaption style="text-align: center;">
+            Pathfinding and interactions of multiple agents. Interactions are virtually adapted Boids.
+          </figcaption>
+        </figure>
+        <!-- Lua bindings were achieved using the LuaBridge library. (not gonna lie, I have no clue how lua works :D)
           The idea here is that some of my students who will want to learn lua will write
           the rest of the game as some rogue-like or RPG or whatever. For me this servers as place to create cool
           effects
@@ -247,25 +254,25 @@
         </a>
         <p>
           A space shooter with Boids simulation and simple 2D physics.
-          Collisions shapes are all convex polygons, where I use the separating axis theorem to check for overlaps. 
+          Collisions shapes are all convex polygons, where I use the separating axis theorem to check for overlaps.
         </p>
         <video class="figure" controls>
-          <source src="AliensAndMeteors/AliensAndMeteors.mp4" type="video/mp4" style="width:fit-content" >
+          <source src="AliensAndMeteors/AliensAndMeteors.mp4" type="video/mp4" style="width:fit-content">
           <!-- <figcaption style="text-align: center;">
             
           </figcaption> -->
-        </video> 
+        </video>
       </div>
     </div>
 </body>
 <footer>
   <div class="projectField">
     <div class="contacts">
-      <p>
-        <b>Author:</b> &#09 &#09Jakub Smutek<br>
-        <b>E-mail:</b> &#09 smutek.jakub@seznam.cz <br>
-        <b>Tel:</b>   &#09 +420 736 270 290 <br>
-        <b>Github: </b>&#09 <a href="https://github.com/Smutekj">https://github.com/Smutekj </a> <br>
+      <pre class="tab">
+        <b>Author:</b>     Jakub Smutek<br>
+        <b>E-mail:</b>     smutek.jakub@seznam.cz <br>
+        <b>Tel:</b>    +420 736 270 290 <br>
+        <b>Github: </b><a href="https://github.com/Smutekj">    https://github.com/Smutekj </a> <br>
       </p>
     </div>
   </div>
