@@ -127,10 +127,11 @@
       margin-right: auto;
     }
 
-    .tab {
-            display: inline-block;
-            margin-left: 80px;
-        }
+    .table,
+    .th,
+    .td {
+      border: 0px solid black;
+    }
 
     /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
     @media screen and (max-width: 1800px) {
@@ -269,12 +270,31 @@
 <footer>
   <div class="projectField">
     <div class="contacts">
-      <p >
+      <!-- <p>
         <b>Author:</b><span class="tab"></span>Jakub Smutek <br>
-        <b>E-mail:</b><span class="tab"></span>smutek.jakub@seznam.cz <br> 
+        <b>E-mail:</b><span class="tab"></span>smutek.jakub@seznam.cz <br>
         <b>Tel:</b><span class="tab"></span>+420 736 270 290 <br>
         <b>Github:</b><span class="tab"></span><a href="https://github.com/Smutekj">https://github.com/Smutekj </a> <br>
-      </pre>
+      </p> -->
+      <table>
+        <tr>
+          <th>Author:</th>
+          <td>Jakub Smutek</td>
+        </tr>
+        <tr>
+          <th>E-mail:</th>
+          <td>smutek.jakub@seznam.c</td>
+        </tr>
+        <tr>
+          <td>Tel:</td>
+          <td>+420 736 270 290</td>
+        </tr>
+        <tr>
+          <td>Github:</td>
+          <td><a href="https://github.com/Smutekj">https://github.com/Smutekj </a><br>
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
 </footer>
