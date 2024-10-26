@@ -106,7 +106,7 @@
     }
 
     .video {
-      width: 80%;
+      width: 100%;
       display: block;
       margin-left: auto;
       margin-right: auto;
@@ -183,6 +183,12 @@
             Code
           </h3>
         </a>
+        <figure class="figure">
+          <img src="Triangulation/Image.png" alt="Aliens" class="video">
+          <figcaption style="text-align: center;">
+            Red lines are constrained edges of the triangulation whereas the green ones are unconstrained.
+          </figcaption>
+        </figure>
         <p>
           A constrained version of the Delaunay triangulation based on the article of
           <a href="https://doi.org/10.1016/0045-7949(93)90239-A">Sloan.</a>
@@ -200,12 +206,7 @@
           <li>Voronoi diagrams construction?</li>
         </ul>
         </p>
-        <figure class="figure">
-          <img src="Triangulation/Image.png" alt="Aliens" class="video">
-          <figcaption style="text-align: center;">
-            Red lines are constrained edges of the triangulation whereas the green ones are unconstrained.
-          </figcaption>
-        </figure>
+
       </div>
 
       <div class="projectField">
@@ -222,6 +223,12 @@
             Code
           </h3>
         </a>
+        <figure class="figure">
+          <img src="PathFindingOptimized/PathFinding-Groups.gif" alt="Test" class="video">
+          <figcaption style="text-align: center;">
+            Pathfinding and interactions of multiple agents. Interactions are virtually adapted Boids.
+          </figcaption>
+        </figure>
         <p>
           A shooter (sort of) game with lua scripting. Not sure what I want to make out of it, yet.
           Graphics, collision system is done using an in-house renderer(which is kind of shitty, kek).
@@ -230,12 +237,6 @@
           (Honsetly, I just took this
           <a href="https://box2d.org/files/ErinCatto_DynamicBVH_Full.pdf">presentation </a>
           and kind of stiched it together based on the info in it. God bless Erin Catto)
-        <figure class="figure">
-          <img src="PathFindingOptimized/PathFinding-Groups.gif" alt="Test" class="video">
-          <figcaption style="text-align: center;">
-            Pathfinding and interactions of multiple agents. Interactions are virtually adapted Boids.
-          </figcaption>
-        </figure>
         <!-- Lua bindings were achieved using the LuaBridge library. (not gonna lie, I have no clue how lua works :D)
           The idea here is that some of my students who will want to learn lua will write
           the rest of the game as some rogue-like or RPG or whatever. For me this servers as place to create cool
@@ -257,16 +258,16 @@
             Code
           </h3>
         </a>
-        <p>
-          A space shooter with Boids simulation and simple 2D physics.
-          Collisions shapes are all convex polygons, where I use the separating axis theorem to check for overlaps.
-        </p>
         <video class="figure" controls>
           <source src="AliensAndMeteors/AliensAndMeteors.mp4" type="video/mp4" style="width:fit-content">
           <!-- <figcaption style="text-align: center;">
             
           </figcaption> -->
         </video>
+        <p>
+          A space shooter with Boids simulation and simple 2D physics.
+          Collisions shapes are all convex polygons, where I use the separating axis theorem to check for overlaps.
+        </p>
       </div>
     </div>
 </body>
