@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
   <style>
-    * {
+ * {
       box-sizing: border-box;
       margin-top: 0px;
       margin-right: 0px;
@@ -23,6 +23,8 @@
     }
 
     .demo {
+      font-size: 25px;
+      font-weight: 800;
       padding: 10px;
       border-radius: 10px;
       margin-left: auto;
@@ -35,7 +37,7 @@
 
     .projectsField {
       border-radius: 20px;
-      background: #ADADAD;
+      background: #333333;
       padding: 10px;
       margin-top: 2%;
       width: 95%;
@@ -50,7 +52,9 @@
 
     .projectField {
       font: "Courier New";
-      background: #eaeaea;
+      background: #000000;
+      /* color: #00FFFF; */
+            color: white;
       padding: 20px;
       width: 95%;
       height: 100%;
@@ -59,10 +63,17 @@
       border-radius: 10px;
     }
 
+    .headerInner{
+      color: rgb(0, 255, 255);
+      text-align: center;
+      font-weight: 800;
+    }
+
     .contacts {
       font: "Courier New";
       font-size: 25px;
-      background: #eaeaea;
+      background: #000000;
+      color: white;
       width: 30%;
       height: 100%;
       margin-left: 3%;
@@ -97,7 +108,7 @@
       margin-right: auto;
       width: 50%;
       color: rgb(0, 255, 247);
-      background-color: #000000;
+      background-color: #333333;
       text-align: center;
       text-decoration: none;
       display: block;
@@ -106,6 +117,7 @@
 
     .button:hover {
       color: rgb(217, 255, 0);
+      font-weight: 800;
     }
 
     .video {
@@ -121,7 +133,7 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      background-color: #eaeaea;
+      background-color: #000000;
     }
 
 
@@ -152,7 +164,7 @@
     </div>
     <div class="projectsField">
       <div class="projectField">
-        <h2 style="text-align: center">
+        <h2 class="headerInner">
           Batch Renderer
         </h2>
         <a href="Renderer/Example.html" class="button">
@@ -196,7 +208,7 @@
         </p>
       </div>
       <div class="projectField">
-        <h2 style="text-align: center">
+        <h2 class="headerInner">
           Constrained Delaunay Triangulation
         </h2>
         <a href="Triangulation/CDTDemo.html" class="button">
@@ -221,8 +233,8 @@
           Includes option to choose type of position vector including small types, like unsigned char.
           This can be useful for optimisation in RTS games for instance, where maps tend to lie on not too large
           grids.
-          (For example, Starcraft 2 uses 2 bytes per Vertex coordinate).
-          Can be used for:
+          (For example, Starcraft 2 uses 2 bytes per Vertex coordinate).<br>
+          <h2 style="headerInner">Applications:<\h2>
         <ul>
           <li>Pathfinding</li>
           <li>Vision polygon construction</li>
@@ -236,7 +248,7 @@
       </div>
 
       <div class="projectField">
-        <h2 style="text-align: center">
+        <h2 class="headerInner">
           Pathfinding
         </h2>
         <a href="PathFinding/projectx.html" class="button">
@@ -271,7 +283,7 @@
         </p>
       </div>
       <div class="projectField">
-        <h2 style="text-align: center">
+        <h2 class="headerInner">
           Aliens And Meteors
         </h2>
         <a href="AliensAndMeteors/projectx.html" class="button">
