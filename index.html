@@ -71,7 +71,10 @@
     }
 
     .headerProjects {
-      height: 115%;
+      /*       height: 20px; */
+      font-size: 150%;
+      margin-top: 1%;
+      /*       margin-bottom: -1%; */
       background-color: hsl(0, 0%, 0%);
       border-radius: 10px;
     }
@@ -139,7 +142,7 @@
     }
   </style>
 
-<link rel="icon" type="image/webp" href="/Images/SonicIcon.webp">
+  <link rel="icon" type="image/webp" href="/Images/SonicIcon.webp">
 </head>
 
 <body>
@@ -163,15 +166,19 @@
           </h3>
         </a>
         <figure class="figure">
-          <iframe width="550" height="345" src="https://www.youtube.com/embed/tK9HJYXlySk?si=QlHyu2jTrz8tEEuw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>          <figcaption style="text-align: center;">
-            Batch-Rendering of 10000 characters. 
+          <iframe width="550" height="345" src="https://www.youtube.com/embed/tK9HJYXlySk?si=QlHyu2jTrz8tEEuw"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <figcaption style="text-align: center;">
+            Batch-Rendering of 10000 characters.
           </figcaption>
         </figure>
         <p>
           A 2D batch renderer using OpenGL ES 2 (and some features of ES 3) in order to make it possible to build into
           WebAssembly. <br> <br>
 
-        <b style="font-size: 15">Features</b>
+          <b style="font-size: 15">Features</b>
         <ul>
           <li>
             Batch rendering of sprites and vertex arrays. Batching is done using a combination of: Shader x 2
