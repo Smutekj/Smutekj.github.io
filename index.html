@@ -309,9 +309,13 @@
       </div>
     </div>
     <video class="figure" controls>
-      <source src="Images/CreateFunnel.mp4" type="video/mp4" style="width:800px">
-      <!-- <figcaption style="text-align: center;">
-      </figcaption> -->
+      <source src="Images/CreateFunnel.mp4" type="video/mp4" style="width:500px" class="video">
+      <figcaption style="text-align: center;"> 
+          The funnel algorithm for finding the shortest path connecting two points inside a polygon
+           (aka Funnel). The funnel is composed of triangles, which are directly obtained from A* on a Delaunay triangulation. 
+          The actual path is then found by constructing a vision cone (white lines) using the triangles comprising the funnel. 
+          For an in-depth explanation consult google.
+      </figcaption> 
     </video>
   </div>
 </body>
