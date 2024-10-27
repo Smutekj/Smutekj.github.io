@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
   <style>
- * {
+    * {
       box-sizing: border-box;
       margin-top: 0px;
       margin-right: 0px;
@@ -54,7 +54,7 @@
       font: "Courier New";
       background: #000000;
       /* color: #00FFFF; */
-            color: white;
+      color: white;
       padding: 20px;
       width: 95%;
       height: 100%;
@@ -63,7 +63,7 @@
       border-radius: 10px;
     }
 
-    .headerInner{
+    .headerInner {
       color: rgb(0, 255, 255);
       text-align: center;
       font-weight: 800;
@@ -184,7 +184,7 @@
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           <figcaption style="text-align: center;">
             Batch-Rendering of 10000 characters. A uniform grid was used as a means of neighbour search acceleration.
-    
+
           </figcaption>
         </figure>
         <p>
@@ -272,21 +272,21 @@
           Graphics, collision system is done using an in-house renderer.
           Broad phase of the collision detection algorithm is accelerated using the Bounding Volume Hiearchy
           spatial data structure.
-          (BVH implementation is based on Erin Catto's 
+          (BVH implementation is based on Erin Catto's
           <a href="https://box2d.org/files/ErinCatto_DynamicBVH_Full.pdf">presentation. </a>
           God bless Erin Catto)
         </p>
         <p>
           Pathfinding process can be divided into two phases: Planning phase and Smoothing phase.
           <br>
-          During the planning phase, an A* algorithm is run on a triangulation graph, 
-          which produces a sequence of triangles connecting the start and finnish points of the PathFinding 
+          During the planning phase, an A* algorithm is run on a triangulation graph,
+          which produces a sequence of triangles connecting the start and finnish points of the PathFinding
           (the sequence of triangles is called Funnel.)
           <br>
-          The Funnel is then processed in the smoothing phase resulting in the final path. <br> 
+          The Funnel is then processed in the smoothing phase resulting in the final path. <br>
           <a href="Images/CreateFunnel.mp4"> A demonstration of the smoothing part of the algorithm.</a>
         </p>
-<!--         
+        <!--         
         <video class="figure" controls>
           <source src="Images/CreateFunnel.mp4" type="video/mp4" class="video">
           <figcaption style="text-align: center;"> 
@@ -326,32 +326,34 @@
   </div>
 </body>
 <footer>
-  <div class="projectField">
-    <div class="contacts">
-      <!-- <p>
+  <div class="background">
+    <div class="projectField">
+      <div class="contacts">
+        <!-- <p>
         <b>Author:</b><span class="tab"></span>Jakub Smutek <br>
         <b>E-mail:</b><span class="tab"></span>smutek.jakub@seznam.cz <br>
         <b>Tel:</b><span class="tab"></span>+420 736 270 290 <br>
         <b>Github:</b><span class="tab"></span><a href="https://github.com/Smutekj">https://github.com/Smutekj </a> <br>
       </p> -->
-      <table>
-        <tr>
-          <th>Author:</th>
-          <td>Jakub Smutek</td>
-        </tr>
-        <tr>
-          <th>E-mail:</th>
-          <td>smutek.jakub@seznam.cz</td>
-        </tr>
-        <tr>
-          <th>Tel:</th>
-          <td>+420 736 270 290</td>
-        </tr>
-        <tr>
-          <th>Github:</th>
-          <td><a href="https://github.com/Smutekj">https://github.com/Smutekj</a></td>
-        </tr>
-      </table>
+        <table>
+          <tr>
+            <th>Author:</th>
+            <td>Jakub Smutek</td>
+          </tr>
+          <tr>
+            <th>E-mail:</th>
+            <td>smutek.jakub@seznam.cz</td>
+          </tr>
+          <tr>
+            <th>Tel:</th>
+            <td>+420 736 270 290</td>
+          </tr>
+          <tr>
+            <th>Github:</th>
+            <td><a href="https://github.com/Smutekj">https://github.com/Smutekj</a></td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </footer>
