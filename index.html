@@ -183,7 +183,8 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           <figcaption style="text-align: center;">
-            Batch-Rendering of 10000 characters.
+            Batch-Rendering of 10000 characters. A uniform grid was used as a means of neighbour search acceleration.
+    
           </figcaption>
         </figure>
         <p>
@@ -244,7 +245,6 @@
           <li>Maybe as a step in construction of more optimal NavMeshes?</li>
         </ul>
         </p>
-
       </div>
 
       <div class="projectField">
@@ -268,19 +268,34 @@
           </figcaption>
         </figure>
         <p>
-          A shooter (sort of) game with lua scripting. Not sure what I want to make out of it, yet.
-          Graphics, collision system is done using an in-house renderer(which is kind of shitty, kek).
+          A shooter game with lua scripting. Not sure what I want to make out of it, yet.
+          Graphics, collision system is done using an in-house renderer.
           Broad phase of the collision detection algorithm is accelerated using the Bounding Volume Hiearchy
           spatial data structure.
-          (Honsetly, I just took this
-          <a href="https://box2d.org/files/ErinCatto_DynamicBVH_Full.pdf">presentation </a>
-          and kind of stiched it together based on the info in it. God bless Erin Catto)
-          <!-- Lua bindings were achieved using the LuaBridge library. (not gonna lie, I have no clue how lua works :D)
-          The idea here is that some of my students who will want to learn lua will write
-          the rest of the game as some rogue-like or RPG or whatever. For me this servers as place to create cool
-          effects
-          like lightning bolts. -->
+          (BVH implementation is based on Erin Catto's 
+          <a href="https://box2d.org/files/ErinCatto_DynamicBVH_Full.pdf">presentation. </a>
+          God bless Erin Catto)
         </p>
+        <p>
+          Pathfinding process can be divided into two phases: Planning phase and Smoothing phase.
+          <br>
+          During the planning phase, an A* algorithm is run on a triangulation graph, 
+          which produces a sequence of triangles connecting the start and finnish points of the PathFinding 
+          (the sequence of triangles is called Funnel.)
+          <br>
+          The Funnel is then processed in the smoothing phase resulting in the final path. <br> 
+          <a href="Images/CreateFunnel.mp4"> A demonstration of the smoothing part of the algorithm.</a>
+        </p>
+<!--         
+        <video class="figure" controls>
+          <source src="Images/CreateFunnel.mp4" type="video/mp4" class="video">
+          <figcaption style="text-align: center;"> 
+              The funnel algorithm for finding the shortest path connecting two points inside a polygon
+                (aka Funnel). The funnel is composed of triangles, which are directly obtained from A* on a Delaunay triangulation. 
+              The actual path is then found by constructing a vision cone (white lines) using the triangles comprising the funnel. 
+              For an in-depth explanation consult google.
+          </figcaption> 
+        </video> -->
       </div>
       <div class="projectField">
         <h2 class="headerInner">
@@ -308,15 +323,6 @@
         </p>
       </div>
     </div>
-    <video class="figure" controls>
-      <source src="Images/CreateFunnel.mp4" type="video/mp4" style="width:500px" class="video">
-      <figcaption style="text-align: center;"> 
-          The funnel algorithm for finding the shortest path connecting two points inside a polygon
-           (aka Funnel). The funnel is composed of triangles, which are directly obtained from A* on a Delaunay triangulation. 
-          The actual path is then found by constructing a vision cone (white lines) using the triangles comprising the funnel. 
-          For an in-depth explanation consult google.
-      </figcaption> 
-    </video>
   </div>
 </body>
 <footer>
