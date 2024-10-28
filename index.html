@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
   <style>
-    
     * {
       box-sizing: border-box;
       margin: 0px
@@ -28,7 +27,7 @@
       margin-left: auto;
       margin-right: auto;
       width: 50%;
-      color: rgb(0, 255, 247);
+      color: rgb(0, 255, 255);
       background: #000000;
       text-align: center;
     }
@@ -36,7 +35,6 @@
     .projectsField {
       border-radius: 20px;
       background: #333333;
-      padding: 10px;
       margin-top: 2%;
       width: 95%;
       height: 100%;
@@ -45,13 +43,13 @@
       grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
       display: grid;
       row-gap: 1%;
+      padding-top: 2%;
       padding-bottom: 5%;
     }
 
     .projectField {
       font: "Courier New";
       background: #000000;
-      /* color: #00FFFF; */
       color: white;
       padding: 20px;
       width: 95%;
@@ -66,8 +64,8 @@
       color: rgb(0, 255, 255);
       text-align: center;
       font-weight: 900;
-      font-size: 30px;    
-}
+      font-size: 30px;
+    }
 
     .contacts {
       font: "Courier New";
@@ -93,7 +91,6 @@
       margin-left: auto;
       margin-right: auto;
       color: rgb(0, 255, 247)
-        
     }
 
 
@@ -136,6 +133,13 @@
       background-color: #000000;
     }
 
+    .figureCaption {
+      /* margin-bottom: 20px; */
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+
 
     table {
       border-collapse: collapse;
@@ -144,7 +148,7 @@
 
     th {
       text-align: left;
-      color: rgb(0, 255, 255) 
+      color: rgb(0, 255, 255)
     }
 
     /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
@@ -183,7 +187,7 @@
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          <figcaption style="text-align: center;">
+          <figcaption class="figureCaption">
             Batch-Rendering of 10000 characters. A uniform grid was used as a means of neighbour search acceleration.
 
           </figcaption>
@@ -225,7 +229,7 @@
         </a>
         <figure class="figure">
           <img src="Triangulation/Image.png" alt="Aliens" class="video">
-          <figcaption style="text-align: center;">
+          <figcaption class="figureCaption">
             Red lines are constrained edges of the triangulation whereas the green ones are unconstrained.
           </figcaption>
         </figure>
@@ -264,8 +268,8 @@
         </a>
         <figure class="figure">
           <img src="PathFindingOptimized/PathFinding-Groups.gif" alt="Test" class="video">
-          <figcaption style="text-align: center;">
-            Group pathfinding of multiple agents. 
+          <figcaption class="figureCaption">
+            Group pathfinding of multiple agents.
           </figcaption>
         </figure>
         <p>
@@ -290,7 +294,7 @@
         <!--         
         <video class="figure" controls>
           <source src="Images/CreateFunnel.mp4" type="video/mp4" class="video">
-          <figcaption style="text-align: center;"> 
+          <figcaption class="figureCaption"> 
               The funnel algorithm for finding the shortest path connecting two points inside a polygon
                 (aka Funnel). The funnel is composed of triangles, which are directly obtained from A* on a Delaunay triangulation. 
               The actual path is then found by constructing a vision cone (white lines) using the triangles comprising the funnel. 
@@ -314,7 +318,7 @@
         </a>
         <video class="figure" controls>
           <source src="AliensAndMeteors/AliensAndMeteors.mp4" type="video/mp4" style="width:fit-content">
-          <!-- <figcaption style="text-align: center;">
+          <!-- <figcaption class="figureCaption">
             
           </figcaption> -->
         </video>
