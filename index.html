@@ -209,20 +209,20 @@
 
         </p>
         <ul>
-            <b style="font-size: 15px; color: cyan">Features</b>
-            <li>
-              Batch rendering of sprites and vertex arrays. Batching is done using a combination of: Shader x 2
-              Textures
-            </li>
-            <li> Static and dynamic draw calls
-            </li>
-            <li> Text rendering based on FreeType2 using character SDFs makes it easy to add effects like borders to text.
-            </li>
-            <li> Can choose data format of textures, so it is possible to use HDR.
-            </li>
-            <li> Framebuffers and offscreen rendering
-            </li>
-          </ul>
+          <b style="font-size: 15px; color: cyan">Features</b>
+          <li>
+            Batch rendering of sprites and vertex arrays. Batching is done using a combination of: Shader x 2
+            Textures
+          </li>
+          <li> Static and dynamic draw calls
+          </li>
+          <li> Text rendering based on FreeType2 using character SDFs makes it easy to add effects like borders to text.
+          </li>
+          <li> Can choose data format of textures, so it is possible to use HDR.
+          </li>
+          <li> Framebuffers and offscreen rendering
+          </li>
+        </ul>
       </div>
       <div class="projectField">
         <h2 class="headerInner">
@@ -253,7 +253,7 @@
           (For example, Starcraft 2 uses 2 bytes per Vertex coordinate).<br>
 
           <b style="text-align: left; color: cyan">Applications: </b> <br>
-          
+
         </p>
         <ul>
           <li>Pathfinding</li>
@@ -285,25 +285,25 @@
           </figcaption>
         </figure>
         <div>
-        <p>
-          A shooter game with lua scripting. Not sure what I want to make out of it, yet.
-          Graphics, collision system is done using an in-house renderer.
-          Broad phase of the collision detection algorithm is accelerated using the Bounding Volume Hiearchy
-          spatial data structure.
-          (BVH implementation is based on Erin Catto's
-          <a href="https://box2d.org/files/ErinCatto_DynamicBVH_Full.pdf">presentation. </a>
-          God bless Erin Catto)
+          <p>
+            A shooter game with lua scripting. Not sure what I want to make out of it, yet.
+            Graphics, collision system is done using an in-house renderer.
+            Broad phase of the collision detection algorithm is accelerated using the Bounding Volume Hiearchy
+            spatial data structure.
+            (BVH implementation is based on Erin Catto's
+            <a href="https://box2d.org/files/ErinCatto_DynamicBVH_Full.pdf">presentation. </a>
+            God bless Erin Catto)
 
-          Pathfinding process can be divided into two phases: Planning phase and Smoothing phase.
-          <br>
-          During the planning phase, an A* algorithm is run on a triangulation graph,
-          which produces a sequence of triangles connecting the start and finnish points of the PathFinding
-          (the sequence of triangles is called Funnel.)
-          <br>
-          The Funnel is then processed in the smoothing phase resulting in the final path. <br>
-          <a href="Images/CreateFunnel.mp4"> A demonstration of the smoothing part of the algorithm.</a>
-        </p>
-      </div>
+            Pathfinding process can be divided into two phases: Planning phase and Smoothing phase.
+            <br>
+            During the planning phase, an A* algorithm is run on a triangulation graph,
+            which produces a sequence of triangles connecting the start and finnish points of the PathFinding
+            (the sequence of triangles is called Funnel.)
+            <br>
+            The Funnel is then processed in the smoothing phase resulting in the final path. <br>
+            <a href="Images/CreateFunnel.mp4"> A demonstration of the smoothing part of the algorithm.</a>
+          </p>
+        </div>
         <!--         
         <video class="figure" controls>
           <source src="Images/CreateFunnel.mp4" type="video/mp4" class="video">
@@ -337,33 +337,36 @@
             A video of the game.
           </figcaption>
         </figure>
-        <p>
-          A space shooter with Boids simulation and simple 2D physics.
-          Collisions shapes are all convex polygons, where I use the separating axis theorem to check for overlaps.
-        </p>
+        <div>
+
+          <p>
+            A space shooter with Boids simulation and simple 2D physics.
+            Collisions shapes are all convex polygons, where I use the separating axis theorem to check for overlaps.
+          </p>
+        </div>
       </div>
     </div>
     <footer>
-        <div class="contacts">
-          <table>
-            <tr>
-              <th>Author:</th>
-              <td>Jakub Smutek</td>
-            </tr>
-            <tr>
-              <th>E-mail:</th>
-              <td>smutek.jakub@seznam.cz</td>
-            </tr>
-            <tr>
-              <th>Tel:</th>
-              <td>+420 736 270 290</td>
-            </tr>
-            <tr>
-              <th>Github:</th>
-              <td><a href="https://github.com/Smutekj">https://github.com/Smutekj</a></td>
-            </tr>
-          </table>
-        </div>
+      <div class="contacts">
+        <table>
+          <tr>
+            <th>Author:</th>
+            <td>Jakub Smutek</td>
+          </tr>
+          <tr>
+            <th>E-mail:</th>
+            <td>smutek.jakub@seznam.cz</td>
+          </tr>
+          <tr>
+            <th>Tel:</th>
+            <td>+420 736 270 290</td>
+          </tr>
+          <tr>
+            <th>Github:</th>
+            <td><a href="https://github.com/Smutekj">https://github.com/Smutekj</a></td>
+          </tr>
+        </table>
+      </div>
     </footer>
   </div>
 </body>
