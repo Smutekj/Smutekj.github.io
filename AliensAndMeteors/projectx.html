@@ -9,7 +9,8 @@
             body {
                 font-family: arial;
                 margin: 0;
-                padding: none
+                padding: none;
+                background-color: rgb(0, 0, 0);
             }
 
             .emscripten {
@@ -32,95 +33,6 @@
                 background-color: #000
             }
 
-            #emscripten_logo {
-                display: inline-block;
-                margin: 0;
-                padding: 6px;
-                width: 265px
-            }
-
-            .spinner {
-                height: 30px;
-                width: 30px;
-                margin: 0;
-                margin-top: 20px;
-                margin-left: 20px;
-                display: inline-block;
-                vertical-align: top;
-                -webkit-animation: rotation .8s linear infinite;
-                -moz-animation: rotation .8s linear infinite;
-                -o-animation: rotation .8s linear infinite;
-                animation: rotation .8s linear infinite;
-                border-left: 5px solid #ebebeb;
-                border-right: 5px solid #ebebeb;
-                border-bottom: 5px solid #ebebeb;
-                border-top: 5px solid #787878;
-                border-radius: 100%;
-                background-color: #bdd72e
-            }
-
-            @-webkit-keyframes rotation {
-                from {
-                    -webkit-transform: rotate(0)
-                }
-
-                to {
-                    -webkit-transform: rotate(360deg)
-                }
-            }
-
-            @-moz-keyframes rotation {
-                from {
-                    -moz-transform: rotate(0)
-                }
-
-                to {
-                    -moz-transform: rotate(360deg)
-                }
-            }
-
-            @-o-keyframes rotation {
-                from {
-                    -o-transform: rotate(0)
-                }
-
-                to {
-                    -o-transform: rotate(360deg)
-                }
-            }
-
-            @keyframes rotation {
-                from {
-                    transform: rotate(0)
-                }
-
-                to {
-                    transform: rotate(360deg)
-                }
-            }
-
-            #status {
-                display: inline-block;
-                vertical-align: top;
-                margin-top: 30px;
-                margin-left: 20px;
-                font-weight: 700;
-                color: #787878
-            }
-
-            #progress {
-                height: 20px;
-                width: 300px
-            }
-
-            #controls {
-                display: inline-block;
-                float: right;
-                vertical-align: top;
-                margin-top: 30px;
-                margin-right: 20px
-            }
-
             #output {
                 width: 100%;
                 height: 200px;
@@ -141,11 +53,13 @@
 
     <body>
         <div class=spinner id=spinner></div>
-        <div class=emscripten id=status>Downloading...</div><span id=controls><span><input type=checkbox
-                    id=resize>Resize canvas</span><span><input type=checkbox id=pointerLock checked>Lock/hide mouse
-                pointer    </span><span><input type=button
+        <div class=emscripten id=status>Downloading...</div>
+        <span id=controls>
+            <span><input type=checkbox id=resize>Resize canvas</span>
+            <span><input type=button
                     onclick='Module.requestFullscreen(document.getElementById("pointerLock").checked,document.getElementById("resize").checked)'
-                    value=Fullscreen></span></span>
+                    value=Fullscreen></span>
+        </span>
         <div class=emscripten><progress hidden id=progress max=100 value=0></progress></div>
         <div class=emscripten_border><canvas class=emscripten id=canvas oncontextmenu=event.preventDefault()
                 tabindex=-1></canvas></div><textarea id=output rows=8></textarea>
