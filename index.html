@@ -150,8 +150,6 @@
       padding-bottom: 20px;
     }
 
-
-
     table {
       border-collapse: collapse;
       width: 100%;
@@ -293,6 +291,9 @@
           <p>
             A space shooter with Boids simulation and simple 2D physics.
             Collisions shapes are all convex polygons, where I use the separating axis theorem to check for overlaps.
+            Boundary Volume Hiearchy is used for broad phase collision detection. 
+            I used an in-house renderer built on SDL2 + GLES3 to do graphics.
+            There are no sounds yet, but will probably use OpenAL in the future.   
           </p>
         </div>
       </div>
