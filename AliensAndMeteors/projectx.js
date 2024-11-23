@@ -678,7 +678,7 @@ function dbg(...args) {
 }
 
 var ASM_CONSTS = {
-  16233584: $0 => {
+  16234976: $0 => {
     var str = UTF8ToString($0) + "\n\n" + "Abort/Retry/Ignore/AlwaysIgnore? [ariA] :";
     var reply = window.prompt(str, "i");
     if (reply === null) {
@@ -686,7 +686,7 @@ var ASM_CONSTS = {
     }
     return allocate(intArrayFromString(reply), "i8", ALLOC_NORMAL);
   },
-  16233809: () => {
+  16235201: () => {
     if (typeof (AudioContext) !== "undefined") {
       return true;
     } else if (typeof (webkitAudioContext) !== "undefined") {
@@ -694,7 +694,7 @@ var ASM_CONSTS = {
     }
     return false;
   },
-  16233956: () => {
+  16235348: () => {
     if ((typeof (navigator.mediaDevices) !== "undefined") && (typeof (navigator.mediaDevices.getUserMedia) !== "undefined")) {
       return true;
     } else if (typeof (navigator.webkitGetUserMedia) !== "undefined") {
@@ -702,7 +702,7 @@ var ASM_CONSTS = {
     }
     return false;
   },
-  16234190: $0 => {
+  16235582: $0 => {
     if (typeof (Module["SDL2"]) === "undefined") {
       Module["SDL2"] = {};
     }
@@ -724,11 +724,11 @@ var ASM_CONSTS = {
     }
     return SDL2.audioContext === undefined ? -1 : 0;
   },
-  16234683: () => {
+  16236075: () => {
     var SDL2 = Module["SDL2"];
     return SDL2.audioContext.sampleRate;
   },
-  16234751: ($0, $1, $2, $3) => {
+  16236143: ($0, $1, $2, $3) => {
     var SDL2 = Module["SDL2"];
     var have_microphone = function(stream) {
       if (SDL2.capture.silenceTimer !== undefined) {
@@ -769,7 +769,7 @@ var ASM_CONSTS = {
       }, have_microphone, no_microphone);
     }
   },
-  16236403: ($0, $1, $2, $3) => {
+  16237795: ($0, $1, $2, $3) => {
     var SDL2 = Module["SDL2"];
     SDL2.audio.scriptProcessorNode = SDL2.audioContext["createScriptProcessor"]($1, 0, $0);
     SDL2.audio.scriptProcessorNode["onaudioprocess"] = function(e) {
@@ -781,7 +781,7 @@ var ASM_CONSTS = {
     };
     SDL2.audio.scriptProcessorNode["connect"](SDL2.audioContext["destination"]);
   },
-  16236813: ($0, $1) => {
+  16238205: ($0, $1) => {
     var SDL2 = Module["SDL2"];
     var numChannels = SDL2.capture.currentCaptureBuffer.numberOfChannels;
     for (var c = 0; c < numChannels; ++c) {
@@ -800,7 +800,7 @@ var ASM_CONSTS = {
       }
     }
   },
-  16237418: ($0, $1) => {
+  16238810: ($0, $1) => {
     var SDL2 = Module["SDL2"];
     var numChannels = SDL2.audio.currentOutputBuffer["numberOfChannels"];
     for (var c = 0; c < numChannels; ++c) {
@@ -813,7 +813,7 @@ var ASM_CONSTS = {
       }
     }
   },
-  16237898: $0 => {
+  16239290: $0 => {
     var SDL2 = Module["SDL2"];
     if ($0) {
       if (SDL2.capture.silenceTimer !== undefined) {
@@ -851,7 +851,7 @@ var ASM_CONSTS = {
       SDL2.audioContext = undefined;
     }
   },
-  16239070: ($0, $1, $2) => {
+  16240462: ($0, $1, $2) => {
     var w = $0;
     var h = $1;
     var pixels = $2;
@@ -922,7 +922,7 @@ var ASM_CONSTS = {
     }
     SDL2.ctx.putImageData(SDL2.image, 0, 0);
   },
-  16240539: ($0, $1, $2, $3, $4) => {
+  16241931: ($0, $1, $2, $3, $4) => {
     var w = $0;
     var h = $1;
     var hot_x = $2;
@@ -959,18 +959,18 @@ var ASM_CONSTS = {
     stringToUTF8(url, urlBuf, url.length + 1);
     return urlBuf;
   },
-  16241528: $0 => {
+  16242920: $0 => {
     if (Module["canvas"]) {
       Module["canvas"].style["cursor"] = UTF8ToString($0);
     }
   },
-  16241611: () => {
+  16243003: () => {
     if (Module["canvas"]) {
       Module["canvas"].style["cursor"] = "none";
     }
   },
-  16241680: () => window.innerWidth,
-  16241710: () => window.innerHeight
+  16243072: () => window.innerWidth,
+  16243102: () => window.innerHeight
 };
 
 /** @constructor */ function ExitStatus(status) {
@@ -10843,7 +10843,7 @@ var _asyncify_start_rewind = createExportWrapper("asyncify_start_rewind", 1);
 
 var _asyncify_stop_rewind = createExportWrapper("asyncify_stop_rewind", 0);
 
-var ___emscripten_embedded_file_data = Module["___emscripten_embedded_file_data"] = 16184324;
+var ___emscripten_embedded_file_data = Module["___emscripten_embedded_file_data"] = 16185716;
 
 function invoke_vii(index, a1, a2) {
   var sp = stackSave();
