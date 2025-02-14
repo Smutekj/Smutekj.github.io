@@ -3,5 +3,7 @@
     {"dir": "Exc1", "count": 2, "progress": 0.0},
     {"dir": "Exc2", "count": 1, "progress": 0.0},
     {"dir": "Exc3", "count": 1, "progress": 0.0},
-    {"dir": "Exc4", "count": 1, "progress": 0.0}
+    {"dir": "Exc4", "count": 1, "progress": 0.0},
+    {"dir": "Exc5", "count": 1, "progress": 0.0},
+    {"dir": "Exc6", "count": 1, "progress": 0.0}
 ]
