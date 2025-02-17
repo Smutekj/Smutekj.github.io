@@ -1,0 +1,57 @@
+body {
+    background-color: rgb(70, 70, 70);
+}
+
+.rectangle {
+    display: flex;
+    width: auto;
+    height: 70px;
+    border-radius: 10px;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #212223;
+    transition: all 0.3s ease-in-out;
+}
+
+.currentLetter {
+    text-decoration-color: rgb(0, 20, 255);
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 5px;
+}
+
+.successLetter {
+    color: #4dfc21;
+    opacity: 0.7;
+    transition: all 0.3s ease-in-out;
+}
+
+.failureLetter {
+    color: #e70000;
+    transition: all 0.3s ease-in-out;
+}
+
+.correctedLetter {
+    color: rgb(255, 149, 0);
+}
+
+.userInputRect {
+    text-align: center;
+    opacity: 0;
+}
+
+.userInput {
+    user-select: none;
+}
+
+.pulsate {
+    animation: pulse 1s infinite linear;
+}
+
+.typingArea {
+    font-size: 25px;
+    color: black;
+}

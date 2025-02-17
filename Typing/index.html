@@ -1,0 +1,196 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Reacting Rectangle</title>
+
+    <link href="./style.css" rel="stylesheet">
+    <link href="./gameStyle.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div
+        style="margin-left: auto; margin-right: auto; display: flex; flex-direction: row; margin-top: 10px; margin-bottom: 10px;">
+        <button class="inputButton" id="buttonInputText">
+            <p> Vlastní text </p>
+        </button>
+    </div>
+    <div id="excercises" class="excContainer"></div>
+
+    <div id="Excercise" style="visibility: hidden">
+        <div class="rectangle" id="buttonsArea">
+            <input type="checkbox" id="userToggleBackspace" value="ON" style="color: white">
+            Backspace
+            </input>
+        </div>
+        <div id="userInputText" class="userInputTextC">
+            <input style="width: 0%" type="text"></input>
+            <button id="submitTextButton" class="inputButton">
+                <p  >Vložit text</p>
+            </button>
+        </div>
+
+        <div id="typingArea" class="typingArea">
+            <div class='userInputRect'>
+                <textarea autofocus id="userInput" placeholder=""></textarea>
+            </div>
+
+            <div class="container" id="wordContainer"></div>
+            <div style="visibility: hidden; height: 0px;">
+                <p id="wtf"></p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="input.js"></script>
+    <script id="f1">
+
+        function setAnimation(node, animationId, time, finalId = "") {
+            node.classList.add(animationId);
+            node.style.setProperty("animation-duration", time + "ms");
+            setTimeout(() => {
+                node.classList.remove(animationId);
+                if (finalId.length > 0) {
+                    node.classList.add(finalId);
+                }
+            }, time); // Match animation duration 
+        }
+
+
+
+        addEvents();
+
+        const excerciseDir = "https://smutekj.github.io/Excercises/";
+
+        var ExcState = {
+            bestAccuracy: 0.,
+            bestTime: 0.
+        };
+        var excStateArray = [];
+
+        var metadata;
+
+        async function readExcercise(dir, number) {
+            var excText = "";
+            try {
+                console.log("READING: " + excerciseDir + dir + "/exc" + number + ".json");
+                const response = await fetch(excerciseDir + dir + "/exc" + number + ".json");
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+                excText = await response.json();
+                console.log(excText)
+            } catch (error) {
+                console.error(error.message);
+            }
+
+            return excText;
+        }
+        function startExcerciseFromWord(excWord) {
+            document.getElementById("Excercise").style.visibility = "visible";
+            if (document.getElementById("mainScript")) {
+                document.getElementById("mainScript").remove();
+            }
+
+            var newExc = document.createElement("script");
+            newExc.id = "mainScript";
+            newExc.src = "main.js";
+            excersiseWord = excWord;
+            document.getElementById("f1").after(newExc);
+        }
+        function startExcercise(excDir, excId) {
+            document.getElementById("Excercise").style.visibility = "visible";
+            if (document.getElementById("mainScript")) {
+                document.getElementById("mainScript").remove();
+            }
+
+            var newExc = document.createElement("script");
+            newExc.id = "mainScript";
+            Promise.resolve(readExcercise(excDir, excId)).then(
+                text => {
+                    newExc.src = "main.js";
+                    excersiseWord = text.text;
+                    document.getElementById("f1").after(newExc);
+                }
+            );
+        }
+
+        function createExcRect(excDirId, excDir) {
+            var excBlock = document.getElementById("excercises");
+            excBlock.classList.add("excContainer");
+            var excRect = document.createElement("div");
+            excRect.id = excDir;
+            excRect.classList.add("excRect");
+            excRect.onclick = function () {
+                currentExcDir = excDir;
+                currentDirId = excDirId;
+                startExcercise(excDir, 0);
+                setAnimation(document.getElementById("excercises"), "disappearAnimation", 600, "invisibleContainer")
+            };
+            excBlock.appendChild(excRect);
+        }
+
+        //! fetch exc. metadata
+        async function getExcercMetadata() {
+            var data;
+            try {
+                const response = await fetch(excerciseDir + "metadata.json");// dir + "/exc" + number);
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+
+                data = await response.json();
+            } catch (error) {
+                console.error(error.message);
+            }
+            return data;
+
+        }
+        metadata = getExcercMetadata();
+
+        const accFormat = new Intl.NumberFormat(undefined, { maximumFractionDigits: 2 });
+        Promise.resolve(metadata).then(async mdata => {
+            metadata = mdata;
+            excStateArray = new Array(mdata.length);
+            console.log(excStateArray.length);
+            for (var excNum = 0; excNum < mdata.length; excNum++) {
+                excStateArray[excNum] = ExcState; //! load state of the excercise;
+                var dir = mdata[excNum]["dir"];
+                var count = mdata[excNum]["count"];
+                createExcRect(excNum, dir);
+
+                var excRect = document.getElementById(dir);
+                if (localStorage.getItem("ExcState" + excNum) === null) {
+                    localStorage.setItem("ExcState" + excNum, ExcState.bestAccuracy);
+                } else {
+                    excStateArray[excNum].bestAccuracy = localStorage.getItem("ExcState" + excNum);
+                }
+
+                excRect.innerHTML = '<p style="font-weight: bold; font-size: 20px">' + dir + '</p>';
+                excRect.innerHTML += '<p style="font-weight: bold;  font-size: 15px"> Best accuracy: '
+                    + accFormat.format(excStateArray[excNum].bestAccuracy * 100)
+                    + ' %</p>';
+            }
+        });
+        function addExcDataToRect(excNum) {
+
+            var dir = metadata[excNum]["dir"];
+            var excRect = document.getElementById(dir);
+
+
+            excRect.innerHTML = '<p style="font-weight: bolder; font-size: 20px">' + dir + '</p>';
+            excRect.innerHTML += '<p style="font-weight: bold;  font-size: 15px"> Best accuracy: '
+                + accFormat.format(excStateArray[excNum].bestAccuracy * 100)
+                + ' %</p>';
+            localStorage.setItem("ExcState" + excNum, excStateArray[excNum].bestAccuracy);
+
+        }
+
+        document.getElementById("pica").onclick = function (event) {
+
+        };
+
+        // window.onload = function () {
+        // }
+    </script>
+</body>
