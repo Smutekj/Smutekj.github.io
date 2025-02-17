@@ -1,4 +1,6 @@
 [
+
+    {"dir": "PrvniCvic", "count": 2, "progress": 0.0},
     {"dir": "Exc0", "count": 5, "progress": 0.0},
     {"dir": "Exc1", "count": 2, "progress": 0.0},
     {"dir": "Exc2", "count": 1, "progress": 0.0}
