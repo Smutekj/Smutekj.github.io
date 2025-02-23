@@ -3,5 +3,7 @@
     {"dir": "Exc0", "count": 5, "progress": 0.0},
     {"dir": "Exc1", "count": 2, "progress": 0.0},
     {"dir": "Exc2", "count": 1, "progress": 0.0},
-    {"dir": "Cvic-y", "count": 4, "progress": 0.0}
+    {"dir": "Cvic-y", "count": 4, "progress": 0.0},
+    {"dir": "Cvic-z", "count": 3, "progress": 0.0},
+    {"dir": "Cvic-z-slova", "count": 2, "progress": 0.0}
 ]
