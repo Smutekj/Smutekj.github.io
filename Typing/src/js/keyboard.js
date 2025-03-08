@@ -11,7 +11,6 @@ function createKeyboard() {
 
             this.firstId = firstId;
             this.lastId = lastId;
-
         }
     }
 
@@ -23,9 +22,9 @@ function createKeyboard() {
 
     const rowKeys = [];
     rowKeys.push("1234567890-=".split(''));
-    rowKeys.push("qwertyuiop[]");
-    rowKeys.push("asdfghjkl;'\\");
-    rowKeys.push("zxcvbnm,./");
+    rowKeys.push("qwertzuiopú)");
+    rowKeys.push("asdfghjklů§\"");
+    rowKeys.push("yxcvbnm,.-");
 
     var keyBoardDiv = document.getElementById("keyboard");
     keyBoardDiv.style.width = rowSize + "px";

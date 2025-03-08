@@ -1,0 +1,56 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Reacting Rectangle</title>
+
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/gameStyle.css" rel="stylesheet">
+    <link href="../css/keyboard.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="Excercise" onclick="forceFocus(event)">
+        <div class="settingsBlock" id="buttonsArea">
+            <label class="settingsCheckbox">
+                <input type="checkbox" id="userToggleBackspace" value="OFF" style="color: white"></input>
+                Backspace
+            </label>
+            <label class="settingsCheckbox">
+                <input type="checkbox" id="userToggleErrors" value="OFF" style="color: white"></input>
+                Povolit Chyby
+            </label>
+        </div>
+        <div style="display: flex; flex-direction: row; margin-left: auto; margin-right: auto;">
+            <div id="typingArea" class="typingArea">
+                <div class='userInputRect'>
+                    <textarea autofocus id="userInput" placeholder="" onfocusout="forceFocus(event)"></textarea>
+                </div>
+                <div class="container" style="width: 70%;" id="wordContainer"></div>
+                <div style="visibility: hidden; height: 0px;">
+                    <p id="wtf"></p>
+                </div>
+            </div>
+            <div id="img">
+                <img src="../../res/typewriter.png" alt="typewriter" style="width: 70%;">
+            </div>
+        </div>
+        <div class="keyboard" id="keyboard"></div>
+    </div>
+
+
+    <script type="text/javascript" src="../js/input.js"></script>
+    <script type="text/javascript" id="mainScript" src="../js/main.js"></script>
+    <script src="../js/keyboard.js"></script>
+    <script id="fx">
+
+        localStorage.setItem("BackspaceOn", "false");
+        localStorage.setItem("AllowErrors", "false");
+
+        function forceFocus(event) {
+            var elementId = document.getElementById("userInput");
+            setTimeout(function () { elementId.focus(); }, 20);
+        }
+        addExcEvents()
+        redrawWords()
+    </script>
+</body>

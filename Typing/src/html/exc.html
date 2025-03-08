@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Reacting Rectangle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            background-color: #f4f4f4;
+        }
+
+        .wordRectangle {
+            /* display: flex; */
+            width: fit-content;
+            height: 70px;
+            /* align-items: center; */
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .rectangle {
+            display: flex;
+            width: auto;
+            height: 70px;
+            border-radius: 10px;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            text-align: center;
+            /* padding: 10px; */
+            background-color: #3498db;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .currentWord {
+            color: #55ff2b;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .currentLetter {
+            text-decoration-color: rgb(0, 20, 255);
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-thickness: 5px;
+        }
+
+        .successWord {
+            color: #55ff2b;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .failureWord {
+            color: #e70000;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .rectangle2 {
+            width: 350px;
+            height: 100px;
+            background-color: #3498db;
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            30% {
+                transform: scale(1.1);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .word {
+            font-size: 20px;
+            align-items: center;
+        }
+
+        .userInputRect {
+            text-align: center;
+            /* visibility: collapse; */
+            opacity: 0;
+        }
+
+        .hiddenInput {
+            /* visibility: hidden; */
+        }
+
+        .userInput {
+            /* visibility: collapse; */
+            user-select: none;
+            /* Standard syntax */
+
+        }
+
+        .pulsate {
+            animation: pulse 1s infinite linear;
+        }
+
+        .break {
+            flex-basis: 100%;
+            height: 0;
+        }
+
+        .paragraph {
+            width: 500px;
+
+        }
+
+        .container {
+            /* display: block; */
+            margin-left: auto;
+            margin-right: auto; 
+            /* flex-wrap: wrap;k */
+            /* justify-content: center; */
+            /* flex-direction: row; */
+            width: 50%;
+            /* max-width: 60vw; */
+            /* gap: 10px; */
+        }
+
+        .userInputTextC {
+            visibility: hidden;
+            margin: auto;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="rectangle" id="buttonsArea">
+        <button id="buttonInputText">
+            <p> Vlastní text </p>
+        </button>
+        <input type="checkbox" id="userToggleBackspace" value="ON">
+            Backspace
+        </input>
+    </div>
+    <div id="userInputText" class="userInputTextC">
+        <input style="width: 30%" type="text"></input>
+        <button id="submitTextButton">
+            <p>Vložit text</p>
+        </button>
+    </div>
+
+    <div id="typingArea">
+        <div class='userInputRect'>
+            <textarea autofocus  id="userInput" placeholder="Type something..."></textarea>
+        </div>
+
+        <div class="container" id="wordContainer"></div>
+        <div class="rectangle">
+            <p id="wtf"></p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
