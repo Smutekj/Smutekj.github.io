@@ -1,3 +1,8 @@
 [
-    {"dir": "Cvic-p", "count": 4, "progress": 0.0}
+    {"dir": "Cvic-p"},
+    {"dir": "Cvic-p-slova"},
+    {"dir": "Cvic-b"},
+    {"dir": "Cvic-b-slova"},
+    {"dir": "Cvic-z"},
+    {"dir": "Cvic-z-slova"}
 ]
