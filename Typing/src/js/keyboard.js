@@ -1,4 +1,30 @@
-function createKeyboard() {
+
+
+function addCorrectFingerStyle(keyChar, keyNode) {
+    const lPinkyKeys = "qay12";
+    const rPinkyKeys = "ů/p-=]['\\/";
+    const lRingKeys = "wsx3";
+    const rRingKeys = "ol.0";
+    const lMiddleKeys = "edc4";
+    const rMiddleKeys = ",ki9";
+    const lIndexKeys = "rfv56tgb";
+    const rIndexKeys = "ujm7nhz8";
+
+    if (lPinkyKeys.includes(keyChar) || rPinkyKeys.includes(keyChar)) {
+        keyNode.classList.add("keyPinky");
+    }
+    if (lRingKeys.includes(keyChar) || rRingKeys.includes(keyChar)) {
+        keyNode.classList.add("keyRing");
+    }
+    if (lMiddleKeys.includes(keyChar) || rMiddleKeys.includes(keyChar)) {
+        keyNode.classList.add("keyMiddle");
+    }
+    if (lIndexKeys.includes(keyChar) || rIndexKeys.includes(keyChar)) {
+        keyNode.classList.add("keyIndex");
+    }
+}
+
+function createKeyboard(parentId) {
     const gapSize = 5;
     const middleSize = 50;
     const rowSize = 800;
@@ -26,7 +52,7 @@ function createKeyboard() {
     rowKeys.push("asdfghjklů§\"");
     rowKeys.push("yxcvbnm,.-");
 
-    var keyBoardDiv = document.getElementById("keyboard");
+    var keyBoardDiv = document.getElementById(parentId);
     keyBoardDiv.style.width = rowSize + "px";
     keyBoardDiv.style.height = 4 * middleSize + 3 * gapSize;;
 
@@ -49,6 +75,9 @@ function createKeyboard() {
             key.classList.add("key", "middleKey");
             key.id = "key-" + rowKeys[i][midId];
             key.innerHTML = "<p>" + rowKeys[i][midId] + "</p>";
+
+            addCorrectFingerStyle(rowKeys[i][midId], key)
+
             rowDiv.appendChild(key);
         }
         var lastKey = document.createElement("div");
@@ -63,19 +92,17 @@ function createKeyboard() {
     rowDiv.style.height = middleSize + "px";
     rowDiv.classList.add("keyboardRow");
     keyBoardDiv.appendChild(rowDiv);
-    
+
     var spaceKey = document.createElement("div");
     spaceKey.id = "key- ";
     spaceKey.classList.add("key");
     spaceKey.style.marginLeft = "30%";
     spaceKey.style.width = "40%";
-    spaceKey.style.height= middleSize + "px";
+    spaceKey.style.height = middleSize + "px";
     rowDiv.appendChild(spaceKey);
-
-
 }
 
-createKeyboard();
+
 
 document.addEventListener('keydown', (event) => {
     const keyPressed = event.key.toLowerCase();
@@ -92,3 +119,5 @@ document.addEventListener('keyup', (event) => {
         keyElement.classList.remove('active');
     }
 });
+
+

@@ -11,12 +11,20 @@
 
     <div class="settingsBlock">
         <button class="inputButton" id="buttonInputText">
-            Vlastní text
+            Vlastní Text
         </button>
         <button class="inputButton" onclick=startGame(event)>
             Hra
         </button>
+        <button class="inputButton" onclick=generateExc()>
+            Vytvoř Cvičení
+        </button>
     </div>
+    
+    <div class="settingsBlock" id="excSettings">
+        <input type="text" id="allowedChars"></input>
+    </div>
+
     <div id="userInputText" class="userInputTextC">
         <textarea type="text" id="ownExcInput"></textarea>
         <button id="submitTextButton" class="inputButton">
@@ -25,6 +33,8 @@
     </div>
     <div id="excercises" class="excContainer"></div>
 
+    <script type="text/javascript" src="../js/keyboard.js"></script>
+    <script type="text/javascript" src="../js/generateExc.js"></script>
     <script type="text/javascript" src="../js/input.js"></script>
     <script type="text/javascript" src="../js/readExcercise.js"></script>
     <script>
@@ -32,6 +42,19 @@
     </script>
 
     <script id="f1">
+
+        function createExcSettingsBar()
+        {
+
+        }
+        function showKeysBar()
+        {
+            var settingsBlockNode = document.getElementById("excSettings");
+            
+            
+
+        }
+
         function setAnimation(node, animationId, time, finalId = "") {
             node.classList.add(animationId);
             node.style.setProperty("animation-duration", time + "ms");
@@ -66,18 +89,18 @@
                 excData => {
                     //! load excercise texts to localStorage
                     var subExcCount = excData.length;
+                    localStorage.setItem("ExcDir", excDir);
+                    localStorage.setItem("CurrExcId", 0);
+                    localStorage.setItem("SubExcCount", subExcCount);
                     for (var id = 0; id < subExcCount; id++) {
                         localStorage.setItem("ExcText" + id, excData[id].text);
-                        localStorage.setItem("ExcDir", excDir);
-                        localStorage.setItem("CurrExcId", 0);
-                        localStorage.setItem("SubExcCount", subExcCount);
                     }
                     window.location.href = "excercise.html"
                 }
             );
         }
 
-        function createExcRect(excDirId, excDir) {
+        function createExcRect(excDir) {
             var excBlock = document.getElementById("excercises");
             excBlock.classList.add("excContainer");
             var excRect = document.createElement("div");
@@ -86,7 +109,6 @@
             excRect.onclick = function () {
 
                 currentExcDir = excDir;
-                currentDirId = excDirId;
                 startExcercise(excDir, 0);
                 setAnimation(document.getElementById("excercises"), "disappearAnimation", 600, "invisibleContainer")
             };
@@ -96,42 +118,36 @@
         //! create exc. rectangles from metadata
         const accFormat = new Intl.NumberFormat(undefined, { maximumFractionDigits: 2 });
         Promise.resolve(getExcercMetadata()).then(async mdata => {
+
             var metadata = mdata;
             excStateArray = new Array(mdata.length);
-            console.log(excStateArray.length);
+
             for (var excNum = 0; excNum < mdata.length; excNum++) {
                 excStateArray[excNum] = ExcState; //! load state of the excercise;
                 var dir = mdata[excNum]["dir"];
                 var count = mdata[excNum]["count"];
-                createExcRect(excNum, dir);
+                createExcRect(dir);
 
                 var excRect = document.getElementById(dir);
-                if (localStorage.getItem("ExcState" + excNum) === null) {
-                    localStorage.setItem("ExcState" + excNum, ExcState.bestAccuracy);
-                } else {
-                    excStateArray[excNum].bestAccuracy = localStorage.getItem("ExcState" + excNum);
+                if (localStorage.getItem("ExcState" + dir) === null) {
+                    localStorage.setItem("ExcState" + dir, "0 %");
                 }
 
                 excRect.innerHTML = '<p style="font-weight: bold; font-size: 20px">' + dir + '</p>';
                 excRect.innerHTML += '<p style="font-weight: bold;  font-size: 15px"> Best accuracy: '
-                    + accFormat.format(excStateArray[excNum].bestAccuracy * 100)
-                    + ' %</p>';
+                    + localStorage.getItem("ExcState" + dir)
+                    + '</p>';
             }
         });
 
+        function addExcDataToRect(dir) {
 
-
-        function addExcDataToRect(excNum) {
-
-            var dir = metadata[excNum]["dir"];
             var excRect = document.getElementById(dir);
 
             excRect.innerHTML = '<p style="font-weight: bolder; font-size: 20px">' + dir + '</p>';
             excRect.innerHTML += '<p style="font-weight: bold;  font-size: 15px"> Best accuracy: '
-                + accFormat.format(excStateArray[excNum].bestAccuracy * 100)
-                + ' %</p>';
-            localStorage.setItem("ExcState" + excNum, excStateArray[excNum].bestAccuracy);
-
+                + localStorage.getItem("ExcState" + dir)
+                + '</p>';
         }
 
     </script>

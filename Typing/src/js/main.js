@@ -7,11 +7,6 @@ var guessedWord = "";
 
 var wordIsCorrect = true;
 
-var incorrectHitCount = 0;
-
-var fuckedUpCharInds = new Set();
-
-
 var Stats = {
     badCharCount: 0,
     totalCharCount: 0,
@@ -22,6 +17,8 @@ var Stats = {
 
 function redrawWords() {
     console.log("REDRAWING WORDS");
+    
+    fuckedUpCharInds = new Set();
 
     currentCharInd = 0;
 
@@ -32,7 +29,8 @@ function redrawWords() {
     var currExcId = localStorage.getItem("CurrExcId");
     excersiseWord = localStorage.getItem("ExcText" + currExcId);
     console.log("CURRENT EXC: " + excersiseWord)
-    
+    Stats.totalCharCount += excersiseWord.length;    
+
     //! clear input
     inputField.value = "";
     document.getElementById("wtf").textContent = "";

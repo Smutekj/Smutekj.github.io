@@ -12,11 +12,11 @@
     <div id="Excercise" onclick="forceFocus(event)">
         <div class="settingsBlock" id="buttonsArea">
             <label class="settingsCheckbox">
-                <input type="checkbox" id="userToggleBackspace" value="OFF" style="color: white"></input>
+                <input type="checkbox" id="userToggleBackspace" value="OFF" style="color: white" disabled></input>
                 Backspace
             </label>
             <label class="settingsCheckbox">
-                <input type="checkbox" id="userToggleErrors" value="OFF" style="color: white"></input>
+                <input type="checkbox" id="userToggleErrors" style="color: white" checked></input>
                 Povolit Chyby
             </label>
         </div>
@@ -44,7 +44,9 @@
     <script id="fx">
 
         localStorage.setItem("BackspaceOn", "false");
-        localStorage.setItem("AllowErrors", "false");
+        localStorage.setItem("AllowErrors", "true");
+        
+        var fuckedUpCharInds = new Set() 
 
         function forceFocus(event) {
             var elementId = document.getElementById("userInput");
@@ -52,5 +54,6 @@
         }
         addExcEvents()
         redrawWords()
+        createKeyboard("keyboard");
     </script>
 </body>

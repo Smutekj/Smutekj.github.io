@@ -1,5 +1,4 @@
 
-var currentDirId = -1;
 var excersiseWord = "";
 
 function finishExcercise() {
@@ -11,14 +10,14 @@ function finishExcercise() {
     {
         alert("You have finished the excercise");
         localStorage.setItem("CurrExcId", 0);
+        var dir = localStorage.getItem("ExcDir");
 
-        // excStateArray[currentDirId].bestAccuracy = Math.max(excStateArray[currentDirId].bestAccuracy,
-        //     1. - Stats.badCharCount / excersiseWord.length);
+        localStorage.setItem("ExcState" + dir, (1. - Stats.badCharCount / Stats.totalCharCount) * 100 + " %");
 
         window.location.href = "index.html"
-        addExcDataToRect(currentDirId);
+        addExcDataToRect(dir);
     } else {
-        alert("Your accuracy is: " + (1. - Stats.badCharCount / excersiseWord.length) * 100 + " %");
+        alert("Your accuracy is: " + (1. - Stats.badCharCount / Stats.totalCharCount) * 100 + " %");
 
         localStorage.setItem("CurrExcId", currentExcId);
         redrawWords();
@@ -32,6 +31,7 @@ function parseComposition(event) {
     console.log("COMP END: " + event.data)
     parseInput(event);
 }
+
 function parseInput(event) {
     if (event.inputType === "insertCompositionText") { return; }
 
@@ -41,7 +41,6 @@ function parseInput(event) {
 
     if (event.inputType === "deleteContentBackward") {
         if (!canUseBackspace) {
-            console.log("HIT BACKSPACE BUT OFF");
             return;
         }
         Stats.backspaceCount++;
@@ -58,11 +57,11 @@ function parseInput(event) {
         console.log("ENTERED PARAGRAPH");
         guessedWord += '\n';
     } else {
-        guessedWord += event.target.value;
+        guessedWord += event.target.value.slice(-1);
+        event.target.value = ""
     }
 
     var currentChar = excersiseWord.at(currentCharInd);
-    Stats.totalCharCount++;
 
     //! scroll appropriately
     var wordContainerNode = document.getElementById("wordContainer");
@@ -80,7 +79,7 @@ function parseInput(event) {
 
         if (fuckedUpCharInds.has(currentCharInd)) {
             successLetterNode.classList.replace("failureLetter", "correctedLetter");
-            fuckedUpCharInds.delete(currentCharInd);
+            // fuckedUpCharInds.delete(currentCharInd);
         } else {
             successLetterNode.classList.add("successLetter");
         }
@@ -95,14 +94,16 @@ function parseInput(event) {
         return;
     }
 
-    fuckedUpCharInds.add(currentCharInd);
     var letterNode = document.getElementById("l" + currentCharInd);
-    letterNode.classList.add("failureLetter");
-    
-    //! if failure does not move me to next letter then make current letter red
-    if (!moveOnFailure) {
+    if (!fuckedUpCharInds.has(currentCharInd)) 
+    {
+        fuckedUpCharInds.add(currentCharInd);
+        letterNode.classList.add("failureLetter");
         Stats.badCharCount++;
-    } else {
+    }
+
+    //! if failure does not move me to next letter then make current letter red
+    if (moveOnFailure) {
         letterNode.classList.remove("currentLetter");
         currentCharInd++
         var nextLetterNode = document.getElementById("l" + currentCharInd);
